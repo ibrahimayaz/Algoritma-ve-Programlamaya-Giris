@@ -19,7 +19,7 @@ Bu eğitim materyalleri serisi, donanım bilgisinden başlayıp algoritma beceri
 
 ### 📅 Haftalık Ders İçerikleri
 
-* **[Önsöz](Hafta_01__Onsoz.md):** Eğitime Başlarken
+* **[Önsöz](Hafta_00_Onsoz.md):** Eğitime Başlarken
 * **[Hafta 1](Hafta_01_Genel_Temeller.md):** Genel Programlama Bilgisi, Programlamanın Temelleri ve Bilgisayarın Temelleri
 * **[Hafta 2](Hafta_02_Algoritma_1.md):** Algoritma: Operatörler, Terimler ve Algoritma Tasarımı - I
 * **[Hafta 3](Hafta_03_Algoritma_2.md):** Algoritma: Operatörler, Terimler, Algoritma Tasarımı - II
