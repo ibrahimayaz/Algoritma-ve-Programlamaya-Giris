@@ -25,11 +25,15 @@ Donanım, bilgisayarın elle tutulup gözle görülebilen fiziksel parçalarıd�
 - **Giriş Birimleri:** Fare, klavye, mikrofon, kamera. (Bilgi almak için kullanılır.)
 - **Çıkış Birimleri:** Monitör (Ekran), hoparlör, yazıcı. (İşlenen bilgiyi kullanıcıya sunmak için kullanılır.)
 
+![Donanım](images/image1.png)
+
+
 ### 2.2. Yazılım (Software)
 Yazılım, bilgisayarın donanımlarını kontrol eden ve belirli bir amaca yönelik çalışan yönnergeler bütünü veya kodlar kümesidir. Donanım sadece cihazın ruhsuz bir iskeletiyken, yazılım ona can veren zekadır.
 - **Sistem Yazılımları:** Windows, macOS, Linux, Android gibi İşletim Sistemleri. 
-- **Uygulama Yazılımları:** Word, Excel, Chrome Tarayıcı, Video oyunları.
+- **Uygulama Yazılımları:** Word, Excel, Chrome Tarayıcı, Video oyunları.  
 
+![Yazılım](images/image2.png)
 ---
 
 ## 3. Programlamanın Temelleri
@@ -58,6 +62,8 @@ Her defasında 0 ve 1'leri kullanarak yazılım üretmek bir insan için işkenc
 2. **Assembly Dili:** Makine dilinin biraz daha insancıllaştırılmış halidir, `ADD`, `MOV` gibi kısa kısaltmalar içerir. Ancak yine de yazması zordur.
 3. **Orta Seviye Diller:** Hem makineden anlayan hem de insan diline yakın olan dillerdir. Özellikle donanım kontrolü yaparken işimize yarar. (Örn: C dili)
 4. **Yüksek Seviye Diller:** İnsan diline, öğrenmesine oldukça yakın olan dillerdir. Okunabilirliği yüksektir. (Örn: Python, Java, C#)
+
+![Programlama](images/image3.png)
 
 Bizim bu dönemin ilerleyen haftalarında öğreneceğimiz **C Dili**, daha çok orta-yüksek seviye arasında konumlandırılır ve temel kodlama mantığını öğrenmek için dünya üzerinde en çok tercih edilen mühendislik ve önlisans başlangıç dilidir.
 

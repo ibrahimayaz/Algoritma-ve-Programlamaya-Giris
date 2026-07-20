@@ -23,6 +23,7 @@ Geçerli ve işe yarar bir algoritmanın bazı evrensel kuralları olmalıdır:
 3. **Sonluluk:** Bir algoritma sonsuz döngüye(kısır döngü) girmeden makul bir deneme sonrasında kesinlikle sonlanmalıdır.
 4. **Etkinlik:** Sorunu doğru ve gerektiği kadar adımda çözmelidir (ne çok kısa ne lüzumsuz derecede uzun).
 
+![Algoritma](images/image4.png)
 ---
 
 ## 3. Temel Terimler: Değişkenler ve Sabitler

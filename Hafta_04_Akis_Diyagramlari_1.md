@@ -23,8 +23,9 @@ Diyagramlarımız kafamıza göre çizdiğimiz şekiller değildir; uluslararas�
 2. **Paralelkenar:** Dışarıdan bilgi okumak (klavyeden giriş yapmak) veya sadece basit ekrana yansıtma (çıkış) durumlarında kullanılır (Genel giriş / çıkış birimidir).
 3. **Dikdörtgen:** İşlem, atama veya hesaplama kutusudur. Tüm matematiksel işlemler (toplama, çıkarma) burada yapılır. 
 4. **Eşkenar Dörtgen (Karar / Şart):** Mantıksal karşılaştırmalar içerir. (Eğer sayı sıfırdan büyükse sağa git, küçükse aşağı git gibi). İçinden "Evet" ve "Hayır" olmak üzere iki ok çıkar.
-5. **Yön Okları:** Sürecin / programın hangi yöne doğru akması gerektiğini temsil eder. 
-
+5. **Yön Okları:** Sürecin / programın hangi yöne doğru akması gerektiğini temsil eder.
+  
+![Akış Diyagramı](images/image5.png)
 ---
 
 ## 4. Akış Diyagramı Tasarım Örnekleri
