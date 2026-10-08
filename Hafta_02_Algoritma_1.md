@@ -100,7 +100,7 @@ Adım 5. Bitir.
 Adım 1. Başla  
 Adım 2. Kullanıcıdan şifreyi girmesini iste.  
 Adım 3. Şifre `1234` değerine **Eşit (==) mi**?  
-Adım 4. Eşitse 5'inci adıma geç. Eşit DEĞİLSE 8'inci adıma (Bitir) git. (Karar yapısı)  
+Adım 4. Eşitse 5'inci adıma geç. Eşit DEĞİLSE 8'inci adıma (Kartı iade et) git. (Karar yapısı)  
 Adım 5. Çekilecek tutarı gir.  
 Adım 6. Girilen tutar BankaHesabı'ndan Küçük Eşit (<=) mi?  
 Adım 7. Eşit veya Küçükse Parayı ver, hesabından düş. Tutar Yetersizse "Bakiye Yetersiz" yaz.  
