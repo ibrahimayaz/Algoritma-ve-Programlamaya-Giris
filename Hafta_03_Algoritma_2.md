@@ -23,9 +23,8 @@ Bir koşulun sonucuna göre iki farklı işlemden birini seçmek, basit karar ya
 
 1. Başla.
 2. Öğrencinin sınav notunu alıp `Not` değişkenine koy.
-3. **Eğer** `Not >= 50` ise ekrana "Sınavı Geçtiniz." yaz.
-4. **Değilse** ekrana "Sınavdan Kaldınız." yaz.
-5. Bitir.
+3. **Eğer** `Not >= 50` ise ekrana "Sınavı Geçtiniz." yaz. **Değilse** ekrana "Sınavdan Kaldınız." yaz.
+4. Bitir.
 
 Bu örnekte tek bir soru sorulur. Koşul doğruysa bir mesaj, yanlışsa diğer mesaj gösterilir; ikinci bir koşul kontrol edilmez.
 
