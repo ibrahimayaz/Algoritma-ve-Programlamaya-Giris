@@ -55,7 +55,7 @@ Verileri işlemek, karşılaştırmak ve bir sonuca ulaşmak için kullandığı
 Günlük hayattan bildiğiniz matematiksel işlemleri yaparlar:
 - **+ (Toplama)** 
 - **- (Çıkarma)**
-- *** (Çarpma)** (Çarpı işareti olarak X değil yıldız kullanırız).
+- **\* (Çarpma)** (Çarpı işareti olarak x değil yıldız(*) kullanırız).
 - **/ (Bölme)**
 - **% (Mod Alma):** Programlamaya yeni giren bir kavramdır. "Bölümünden kalan" anlamındadır. Örneğin: `10 % 3 = 1`'dir. (10'u 3'e bölseniz kalan 1 olur). Algoritmalarda sayıların "tek mi çift mi" olduğunu anlamak için sıkça kullanılır.
 
@@ -85,28 +85,26 @@ Algoritmalar temelde yukarıdan aşağıya (1, 2, 3.. şeklinde) adım adım sı
 Hayattaki bir yol ayrımı gibidir. Algoritma her yoldan gidemez, yukarıda gördüğümüz "İlişkisel Operatörler" ile sistem bir soru sorar, sonuca göre ya A yolundan ya da B yolundan akış devam eder. 
 Örneğin yukarıda yazdığımız Vize-Final geçme algoritması: `Eğer (If) Puan >= 60 -> Geçecek Değilse (Else) -> Kalacak.` 
 
-*(Not: Algoritma Döngü (Tekrar) yapılarını ilerleyen haftalarda kapsamlı şekilde işleyeceğiz).*
-
 ---
 
-## 6. Sözel Algoritma Tasarım Örnekleri
+## 6. Sözde Algoritma Tasarım Örnekleri
 
-**Örnek 1: İki ayrı notu alıp ortalama çıkaran algoritma:**
-Adım 1. Başla
-Adım 2. Vize (V) notunu gir, Final (F) notunu gir
-Adım 3. Ortalama = ( V * 0.4 ) + ( F * 0.6 ) hesabı yap
-Adım 4. Bulunan "Ortalama" değerini Ekrana yaz.
+**Örnek 1: İki ayrı notu alıp ortalama çıkaran algoritma:**  
+Adım 1. Başla  
+Adım 2. Vize (V) notunu gir, Final (F) notunu gir  
+Adım 3. Ortalama = ( V * 0.4 ) + ( F * 0.6 ) hesabı yap  
+Adım 4. Bulunan "Ortalama" değerini Ekrana yaz.  
 Adım 5. Bitir.
 
-**Örnek 2: ATM'den Para Çekme Mantığı:**
-Adım 1. Başla
-Adım 2. Kullanıcıdan şifreyi girmesini iste.
-Adım 3. Şifre `1234` değerine **Eşit (==) mi**?
-Adım 4. Eşitse 5'inci adıma geç. Eşit DEĞİLSE 9'uncu adıma (Bitir) git. (Karar yapısı)
-Adım 5. Çekilecek tutarı gir.
-Adım 6. Girilen tutar BankaHesabı'ndan Küçük Eşit (<=) mi? 
-Adım 7. Eşit veya Küçükse Parayı ver, hesabından düş. Tutar Yetersizse "Bakiye Yetersiz" yaz.
-Adım 8. Kartı İade et.
+**Örnek 2: ATM'den Para Çekme Mantığı:**  
+Adım 1. Başla  
+Adım 2. Kullanıcıdan şifreyi girmesini iste.  
+Adım 3. Şifre `1234` değerine **Eşit (==) mi**?  
+Adım 4. Eşitse 5'inci adıma geç. Eşit DEĞİLSE 8'inci adıma (Bitir) git. (Karar yapısı)  
+Adım 5. Çekilecek tutarı gir.  
+Adım 6. Girilen tutar BankaHesabı'ndan Küçük Eşit (<=) mi?  
+Adım 7. Eşit veya Küçükse Parayı ver, hesabından düş. Tutar Yetersizse "Bakiye Yetersiz" yaz.  
+Adım 8. Kartı İade et.  
 Adım 9. Bitir.
 
 ---
