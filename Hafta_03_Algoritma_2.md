@@ -138,7 +138,7 @@ Soru: Dışarıdan girilen bir sayının Pozitif mi, Negatif mi yoksa Sıfır (0
 2. "Lütfen Bir Sayı Girin:" mesajını göster.
 3. Kullanıcının bilgisini alıp `Sayi` değişkenine koy.
 4. **Eğer** `Sayi == 0` ise;
-   - Doğru ise ekrana "Sayınız Sıfırdır." yazıp Adım 6'ya git.
+   - Doğru ise ekrana "Sayınız Sıfırdır." yaz.
    - DEĞİLSE;
       - **Eğer** `Sayi > 0` ise;
       - Doğru ise ekrana "Sayınız Pozitiftir." yaz.
