@@ -153,11 +153,9 @@ Soru: Kullanıcı sistem bir tavan sayı girecek (Diyelim ki 5 girdi). Sistemin 
 3. Hafızada `Sayac = 1` ve `Toplam = 0` adında iki tane başlangıç değişkeni kutusu ata.
 4. `Toplam = Toplam + Sayac` işlemini yap (Sıfırın üstüne 1 eklendi, artık toplam 1).
 5. `Sayac = Sayac + 1` işlemini yap (Sayac'ı bir arttırdık. 2 oldu).
-6. **Eğer (ŞART SOR) :** `Sayac <= LimitSayı` ise
-   - Şart Doğruysa: Demekki daha bitmemiş işimiz, **Adım 4'e Geri Dön**. (Döngü).
-   - Şart Yanlışsa: Demek ki üst limite ulaştık döngü koptu, Adım 7'ye ilerle.
-7. Ekrana nihai hesabı bulduğunuz `Toplam` değişkenini yazdır.
-8. Bitir.
+6. **Eğer :** `Sayac <= LimitSayı` ise Demekki daha bitmemiş işimiz, **Adım 4'e Geri Dön**. (Döngü).
+   - **DEĞİLSE** Ekrana nihai hesabı bulduğunuz `Toplam` değişkenini yazdır.
+7. Bitir.
 
 ---
 
