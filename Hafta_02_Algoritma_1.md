@@ -99,13 +99,12 @@ Adım 5. Bitir.
 **Örnek 2: ATM'den Para Çekme Mantığı:**  
 Adım 1. Başla  
 Adım 2. Kullanıcıdan şifreyi girmesini iste.  
-Adım 3. Şifre `1234` değerine **Eşit (==) mi**?  
-Adım 4. Eşitse 5'inci adıma geç. Eşit DEĞİLSE 8'inci adıma (Kartı iade et) git. (Karar yapısı)  
+Adım 3. Kart şifresini giriniz (`1234`) gir. 
+Adım 4. **EĞER** şifre `1234`  ise 5'inci adıma geç. **DEĞİLSE** 7'inci adıma (Kartı iade et) git. (Karar yapısı)  
 Adım 5. Çekilecek tutarı gir.  
-Adım 6. Girilen tutar BankaHesabı'ndan Küçük Eşit (<=) mi?  
-Adım 7. Eşit veya Küçükse Parayı ver, hesabından düş. Tutar Yetersizse "Bakiye Yetersiz" yaz.  
-Adım 8. Kartı İade et.  
-Adım 9. Bitir.
+Adım 6. Girilen tutar BankaHesabı'ndan Küçükse? Tutar kadar Hesabından düş DEĞİLSE yani Yetersizse "Bakiye Yetersiz" yaz.  
+Adım 7. Kartı İade et.  
+Adım 8. Bitir.
 
 ---
 
