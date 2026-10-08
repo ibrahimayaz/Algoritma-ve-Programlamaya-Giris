@@ -139,11 +139,11 @@ Soru: Dışarıdan girilen bir sayının Pozitif mi, Negatif mi yoksa Sıfır (0
 3. Kullanıcının bilgisini alıp `Sayi` değişkenine koy.
 4. **Eğer** `Sayi == 0` ise;
    - Doğru ise ekrana "Sayınız Sıfırdır." yazıp Adım 6'ya git.
-   - Yanlış ise Adım 5'e devam et.
-5. **Eğer** `Sayi > 0` ise;
-   - Doğru ise ekrana "Sayınız Pozitiftir." yaz.
-   - Yanlış ise (Yani Ne 0, ne de Büyük değilse zaten Negatiftir) "Sayınız Negatiftir" yaz.
-6. Bitir.
+   - DEĞİLSE;
+      - **Eğer** `Sayi > 0` ise;
+      - Doğru ise ekrana "Sayınız Pozitiftir." yaz.
+      - DEĞİLSE (Yani Ne 0, ne de Büyük değilse zaten Negatiftir) "Sayınız Negatiftir" yaz.
+5. Bitir.
 
 ### Örnek 2: Döngü ve Toplayıcı Mantığı. (1'den N'ye Kadar Olan Sayıları Toplamak)
 Soru: Kullanıcı sistem bir tavan sayı girecek (Diyelim ki 5 girdi). Sistemin görevi: (1+2+3+4+5) bu işlemi otomatik hesaplayıp sonucu bulacak. 
