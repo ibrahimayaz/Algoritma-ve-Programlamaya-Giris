@@ -54,7 +54,7 @@ Ehliyet başvurusu için önce yaş koşulunu, yaş koşulu sağlanıyorsa sağl
 3. **Eğer** `Yas >= 18` ise;
    - Sağlık raporu olup olmadığını alıp `SaglikRaporuVarMi` değişkenine koy.
    - **Eğer** `SaglikRaporuVarMi` doğru ise ekrana "Sürücü kursuna kayıt olabilirsiniz." yaz.
-   - **Değilse** ekrana "Yaş koşulunu sağlıyorsunuz ancak sağlık raporunuz eksik." yaz.
+   - **Değilse** ekrana "Yaş koşulunu sağlıyorsunuz ancak sağlık raporunuz eksik." yaz.  
 4. **Değilse** ekrana "18 yaşından küçük olduğunuz için başvuru yapamazsınız." yaz.
 5. Bitir.
 
@@ -88,6 +88,8 @@ Aynı durum hesaplamalarda **Toplayıcılar** için geçerlidir:
 ## 4. Döngü (Tekrar - Loop) Mantığına Giriş
 Bir işlemin belirli bir amaca veya koşula ulaşana kadar tekrar edilmesine **Döngü (Loop)** denir.
 
+Bir döngünün temelinde üç adım vardır: başlangıç değerini belirlemek, tekrarlanacak işlemi yapmak ve her turda değeri güncelleyip devam koşulunu kontrol etmek. Koşul sağlandığı sürece işlem tekrarlanır; sağlanmadığında döngü biter.
+
 ### Örnek 1: Afişleri Numaralandırma
 Bilgisayarın ekrana "Afiş 1", "Afiş 2" ve bu şekilde "Afiş 100" yazmasını isteyelim. Döngü kullanmazsak her afiş için ayrı bir adım yazmamız gerekir. Sayaç kullanarak bu tekrarları kısa bir algoritmayla yapabiliriz.
 
@@ -100,17 +102,15 @@ Bilgisayarın ekrana "Afiş 1", "Afiş 2" ve bu şekilde "Afiş 100" yazmasını
 
 Sayaç her turda bir arttığı için algoritma afişleri 1'den 100'e kadar sırasıyla yazar ve 100'ü geçince durur.
 
-### Örnek 2: 5'lerin Çarpım Tablosu
-1'den 10'a kadar olan sayılarla 5'in çarpımını sırayla ekrana yazdıralım.
+### Örnek 2: 1'den 3'e Kadar Sayma
+Sayaç kullanarak ekrana 1, 2 ve 3 sayılarını yazdıralım.
 
 1. Başla.
 2. `Sayac = 1` olarak başlangıç değerini ata.
-3. Ekrana `5 x Sayac = 5 * Sayac` ifadesini yaz.
+3. `Sayac` değerini ekrana yaz.
 4. `Sayac = Sayac + 1` işlemini yap.
-5. **Eğer** `Sayac <= 10` ise Adım 3'e geri dön.
+5. **Eğer** `Sayac <= 3` ise Adım 3'e geri dön.
 6. **Değilse** Bitir.
-
-Bu algoritma `5 x 1 = 5` ile başlar ve `5 x 10 = 50` satırına kadar devam eder.
 
 ### Örnek 3: Geri Sayım
 Bir başlangıç sayısından 1'e kadar geriye doğru sayıp ekrana yazdıralım. Bu örnekte sayaç artmak yerine her turda bir azalır.
