@@ -39,7 +39,7 @@ Yazılım serüvenlerinde "10 kere tekrar et" komutunu diyagramla ifade edeceği
 ```mermaid
 graph TD
     A([Başla]) --> B[Adim = 1]
-    B --> C[/Ekrana 'Merhaba Dünya' Yaz/]
+    B --> C@{ shape: doc, label: "Merhaba Dünya" }
     C --> D[Adim = Adim + 1]
     D --> E{Adim <= 5 mi?}
     
@@ -73,7 +73,7 @@ graph TD
     E --> F{Tur <= N mi?}
     
     F -- EVET, Döngü Devam --> D
-    F -- HAYIR, Limiti Aştık --> G[/Ekrana 'Sayıların Toplamı' Yaz/]
+    F -- HAYIR, Limiti Aştık --> G@{ shape: doc, label: "Toplam" }
     
     G --> H([Bitir])
 ```
@@ -108,7 +108,7 @@ graph TD
     D -- EVET, Kapsamda --> E[Toplam = Toplam + Sayi]
     E --> C
     
-    D -- HAYIR, Negatif Bir Rakam Girdi --> F[/Ekrana 'Nihai Toplam' İfadesini ve Değerini Bas/]
+    D -- HAYIR, Negatif Bir Rakam Girdi --> F@{ shape: doc, label: "Toplam" }
     F --> G([Bitir])
 ```
 *Açıklama:* Bu döngümüzde net bir 'Sayac = Sayac+1' durumu yok, şart kullanıcıya bağlandı. Kullanıcı klavyeden -5 yazmadığı müddetçe, sistem sonsuza kadar onu (C) aşamasıyla (E) aşaması arasında defalarca çalışabilecek bir kafesin içerisine attı. Yazılımların interaktif olarak insana hizmet etmesini saplayan kilit prensip buradaki diyagramdır.

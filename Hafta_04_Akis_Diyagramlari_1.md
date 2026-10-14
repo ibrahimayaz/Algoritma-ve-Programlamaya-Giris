@@ -47,7 +47,7 @@ graph TD
     A([Başla]) --> B[/1. Sayıyı Giriniz: Sayi1/]
     B --> C[/2. Sayıyı Giriniz: Sayi2/]
     C --> D[Toplam = Sayi1 + Sayi2]
-    D --> E[/Ekrana Yazdır: Toplam/]
+    D --> E@{ shape: doc, label: "Toplam" }
     E --> F([Bitir])
 ```
 *Açıklama:* Başla ve Bitir elipslerle belirtildi. Dışarıdan Sayi1 ve Sayi2 alınırken Giriş/Çıkış sembolü (burada paralelogram niyetine /.../ kullanıldı) uygulandı. İşlem (toplama işlemi) standart dikdörtgen olarak tasarlandı.
@@ -60,19 +60,18 @@ Bu örnekte işin içine bir "KARAR (ŞART)" işlemi, yani *Eşkenar Dörtgen* g
 **Sözel Algoritma:**
 1. Başla.
 2. Kullanıcıdan bir sayı girilmesini iste.
-3. Sayının 2'ye göre modu (kalanı) 0'a eşit mi diye kontrol et. (Sayı % 2 == 0)
-4. Eğer eşitse (EVET) ekrana "Sayınız Çifttir" yaz.
-5. Eğer eşit değilse (HAYIR) ekrana "Sayınız Tektir" yaz.
-6. Bitir.
+3. Eğer (Sayı % 2 == 0) ise "Sayınız Çifttir" yaz.
+4. Değilse ekrana "Sayınız Tektir" yaz.
+5. Bitir.
 
 **Akış Diyagramı Şeması:**
 ```mermaid
 graph TD
     A([Başla]) --> B[/Bir Sayı Giriniz/]
-    B --> C{Sayı tam olarak 2'ye bölünür mü?}
+    B --> C{Sayı%2==0}
     
-    C -- EVET --> D[/Ekrana 'Sayı Çift' Yazdır/]
-    C -- HAYIR --> E[/Ekrana 'Sayı Tek' Yazdır/]
+    C -- EVET --> D@{ shape: doc, label: "Sayı Çifttir" }
+    C -- HAYIR --> E@{ shape: doc, label: "Sayı tektir" }
     
     D --> F([Bitir])
     E --> F([Bitir])
@@ -88,10 +87,9 @@ graph TD
 1. Başla.
 2. Vize notunu gir.
 3. Final notunu gir.
-4. Ortalama hesapla: (Vize * 0.4) + (Final * 0.6)
-5. Ortalama >= 60 şartını kontrol et.
-6. Şart sağlanıyorsa (EVET) "Dersten Geçtin" yaz.
-7. Şart sağlanmıyorsa (HAYIR) "Dersten Kaldın" yaz.
+4. Ortalama = (Vize * 0.4) + (Final * 0.6)
+5. Eğer Ortalama >= 60 ise "Dersten Geçtin" yaz.
+7. Değilse "Dersten Kaldın" yaz.
 8. Bitir.
 
 **Akış Diyagramı Şeması:**
@@ -102,8 +100,8 @@ graph TD
     C --> D[Ortalama = Vize*0.4 + Final*0.6]
     D --> E{Ortalama >= 60 mı?}
     
-    E -- EVET, Büyüktür veya Eşittir --> F[/Durum: Geçtin/]
-    E -- HAYIR, Küçüktür --> G[/Durum: Kaldın/]
+    E -- EVET --> F@{ shape: doc, label: "Dersten geçtiniz" }
+    E -- HAYIR --> G@{ shape: doc, label: "Dersten kaldınız" }
     
     F --> H([Bitir])
     G --> H([Bitir])
