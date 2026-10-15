@@ -107,7 +107,124 @@ graph TD
     G --> H([Bitir])
 ```
 
+
+
 *Açıklama:* Burada hem bir hesaplama (Dikdörtgen İşlem Alanı) kullandık hem de bir algoritmik şart (Karar - Eşkenar Dörtgen) kullandık. Üçüncü örneğimiz, günlük hayattaki otomasyonların bilgisayarın mantığında nasıl işlediğine en güzel yatkınlığı sağlar.
+
+---
+
+### ÖRNEK 4: Klavyeden Girilen Üç Sayının En Büyüğünü Bulan Program
+Bu örnekte klavyeden alınan üç sayı karşılaştırılır ve en büyük olan sayı bulunur. Önce ilk sayı en büyük kabul edilir; ardından ikinci ve üçüncü sayılar sırayla bu değerle karşılaştırılır.
+
+**Akış Diyagramı Şeması:**
+
+![Klavyeden girilen üç sayının en büyüğünü bulan akış diyagramı](images/en_buyuk_akis_diyagrami.jpg)
+
+*Açıklama:* `a`, `b` ve `c` değerleri alındıktan sonra `enbuyuk` değişkenine önce `a` atanır. `b` ve ardından `c`, o anki en büyük değerle karşılaştırılır; daha büyük olan varsa `enbuyuk` güncellenir ve sonuç gösterilir.
+
+### ÖRNEK 5: Dikdörtgenin Alanını ve Çevresini Hesaplayan Program
+Bu akış diyagramında kullanıcıdan dikdörtgenin kısa ve uzun kenar uzunlukları alınır. Alan `kısa kenar × uzun kenar`, çevre ise `2 × (kısa kenar + uzun kenar)` formülüyle hesaplanıp ekranda gösterilir.
+
+**Akış Diyagramı Şeması:**
+```mermaid
+graph TD
+    A([Başla]) --> B[/Kısa kenarı gir/]
+    B --> C[/Uzun kenarı gir/]
+    C --> D[Alan = kısaKenar * uzunKenar]
+    D --> E[Çevre = 2 * (kısaKenar + uzunKenar)]
+    E --> F@{ shape: doc, label: "Alan ve çevreyi göster" }
+    F --> G([Bitir])
+```
+
+### ÖRNEK 6: Dairenin Alanını ve Çevresini Hesaplayan Program
+Bu örnekte kullanıcıdan dairenin yarıçapı alınır. Alan `π × yarıçap × yarıçap`, çevre ise `2 × π × yarıçap` formülleriyle hesaplanır. Hesaplamalarda `π` yaklaşık `3,14` olarak kullanılır.
+
+**Akış Diyagramı Şeması:**
+```mermaid
+graph TD
+    A([Başla]) --> B[/Yarıçapı gir/]
+    B --> C[Alan = 3.14 * yarıçap * yarıçap]
+    C --> D[Çevre = 2 * 3.14 * yarıçap]
+    D --> E@{ shape: doc, label: "Alan ve çevreyi göster" }
+    E --> F([Bitir])
+```
+
+### ÖRNEK 7: Sayının Pozitif, Negatif veya Sıfır Olduğunu Bulan Program
+Bu örnekte kullanıcıdan bir sayı alınır. Önce sayının sıfırdan büyük olup olmadığı kontrol edilir; değilse sıfırdan küçük olup olmadığına bakılır. İki koşul da sağlanmıyorsa sayı sıfırdır.
+
+**Akış Diyagramı Şeması:**
+```mermaid
+graph TD
+    A([Başla]) --> B[/Bir sayı gir/]
+    B --> C{Sayı > 0 mı?}
+    C -- Evet --> D@{ shape: doc, label: "Sayı pozitiftir" }
+    C -- Hayır --> E{Sayı < 0 mı?}
+    E -- Evet --> F@{ shape: doc, label: "Sayı negatiftir" }
+    E -- Hayır --> G@{ shape: doc, label: "Sayı sıfırdır" }
+    D --> H([Bitir])
+    F --> H
+    G --> H
+```
+
+### ÖRNEK 8: Yaşa Göre Reşitlik Durumunu Bulan Program
+Kullanıcıdan yaşı alınır ve 18 yaşını doldurup doldurmadığı karar yapısıyla kontrol edilir.
+
+**Akış Diyagramı Şeması:**
+```mermaid
+graph TD
+    A([Başla]) --> B[/Yaşı gir/]
+    B --> C{Yaş >= 18 mi?}
+    C -- Evet --> D@{ shape: doc, label: "Reşitsiniz" }
+    C -- Hayır --> E@{ shape: doc, label: "Reşit değilsiniz" }
+    D --> F([Bitir])
+    E --> F
+```
+
+### ÖRNEK 9: Üç Kenarla Üçgen Oluşup Oluşmadığını Bulan Program
+Kullanıcıdan üç kenar uzunluğu alınır. Kenarlar pozitifse üçgen eşitsizliği kontrol edilir: Herhangi iki kenarın toplamı, üçüncü kenardan büyük olmalıdır.
+
+**Akış Diyagramı Şeması:**
+```mermaid
+graph TD
+    A([Başla]) --> B[/a, b ve c kenar uzunluklarını gir/]
+    B --> C{a > 0 ve b > 0 ve c > 0 mı?}
+    C -- Hayır --> D@{ shape: doc, label: "Kenar uzunlukları pozitif olmalı" }
+    C -- Evet --> E{a+b > c ve a+c > b ve b+c > a mı?}
+    E -- Evet --> F@{ shape: doc, label: "Üçgen oluşur" }
+    E -- Hayır --> G@{ shape: doc, label: "Üçgen oluşmaz" }
+    D --> H([Bitir])
+    F --> H
+    G --> H
+```
+
+### ÖRNEK 10: 1'den 5'e Kadar Sayıları Yazdırma
+**Soru:** 1'den başlayarak 5'e kadar olan sayıları ekrana yazdıran akış diyagramını oluşturunuz. Karar yapısı, sayacın 5'e ulaşıp ulaşmadığını kontrol ederek döngüyü sürdürür veya bitirir.
+
+**Akış Diyagramı Şeması:**
+```mermaid
+graph TD
+    A([Başla]) --> B[i = 1]
+    B --> C{i <= 5 mi?}
+    C -- Evet --> D@{ shape: doc, label: "i değerini yazdır" }
+    D --> E[i = i + 1]
+    E --> C
+    C -- Hayır --> F([Bitir])
+```
+
+### ÖRNEK 11: 1'den 10'a Kadar Sayıların Toplamını Bulma
+**Soru:** 1'den 10'a kadar olan tam sayıların toplamını bulan akış diyagramını oluşturunuz. Her turda sayaç toplama eklenir ve sayaç artırılır; sayaç 10'u geçince toplam ekranda gösterilir.
+
+**Akış Diyagramı Şeması:**
+```mermaid
+graph TD
+    A([Başla]) --> B[i = 1, toplam = 0]
+    B --> C{i <= 10 mu?}
+    C -- Evet --> D[toplam = toplam + i]
+    D --> E[i = i + 1]
+    E --> C
+    C -- Hayır --> F@{ shape: doc, label: "toplamı göster" }
+    F --> G([Bitir])
+```
 
 ---
 
