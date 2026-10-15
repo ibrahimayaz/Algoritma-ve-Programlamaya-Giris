@@ -47,7 +47,7 @@ graph TD
     A([Başla]) --> B[/1. Sayıyı Giriniz: Sayi1/]
     B --> C[/2. Sayıyı Giriniz: Sayi2/]
     C --> D[Toplam = Sayi1 + Sayi2]
-    D --> E@{ shape: doc, label: "Toplam" }
+    D --> E[/Toplam/]
     E --> F([Bitir])
 ```
 *Açıklama:* Başla ve Bitir elipslerle belirtildi. Dışarıdan Sayi1 ve Sayi2 alınırken Giriş/Çıkış sembolü (burada paralelogram niyetine /.../ kullanıldı) uygulandı. İşlem (toplama işlemi) standart dikdörtgen olarak tasarlandı.
@@ -70,8 +70,8 @@ graph TD
     A([Başla]) --> B[/Bir Sayı Giriniz/]
     B --> C{Sayı%2==0}
     
-    C -- EVET --> D@{ shape: doc, label: "Sayı Çifttir" }
-    C -- HAYIR --> E@{ shape: doc, label: "Sayı tektir" }
+    C -- EVET --> D[/Sayı Çifttir/]
+    C -- HAYIR --> E[/Sayı tektir/]
     
     D --> F([Bitir])
     E --> F([Bitir])
@@ -100,8 +100,8 @@ graph TD
     C --> D[Ortalama = Vize*0.4 + Final*0.6]
     D --> E{Ortalama >= 60 mı?}
     
-    E -- EVET --> F@{ shape: doc, label: "Dersten geçtiniz" }
-    E -- HAYIR --> G@{ shape: doc, label: "Dersten kaldınız" }
+    E -- EVET --> F[/Dersten geçtiniz/]
+    E -- HAYIR --> G[/Dersten kaldınız/]
     
     F --> H([Bitir])
     G --> H([Bitir])
@@ -132,7 +132,7 @@ graph TD
     B --> C[/Uzun kenarı gir/]
     C --> D[Alan = kısaKenar * uzunKenar]
     D --> E[Çevre = 2 * (kısaKenar + uzunKenar)]
-    E --> F@{ shape: doc, label: "Alan ve çevreyi göster" }
+    E --> F[/Alan ve çevreyi göster/]
     F --> G([Bitir])
 ```
 
@@ -145,7 +145,7 @@ graph TD
     A([Başla]) --> B[/Yarıçapı gir/]
     B --> C[Alan = 3.14 * yarıçap * yarıçap]
     C --> D[Çevre = 2 * 3.14 * yarıçap]
-    D --> E@{ shape: doc, label: "Alan ve çevreyi göster" }
+    D --> E[/Alan ve çevreyi göster/]
     E --> F([Bitir])
 ```
 
@@ -157,10 +157,10 @@ Bu örnekte kullanıcıdan bir sayı alınır. Önce sayının sıfırdan büyü
 graph TD
     A([Başla]) --> B[/Bir sayı gir/]
     B --> C{Sayı > 0 mı?}
-    C -- Evet --> D@{ shape: doc, label: "Sayı pozitiftir" }
+    C -- Evet --> D[/Sayı pozitiftir/]
     C -- Hayır --> E{Sayı < 0 mı?}
-    E -- Evet --> F@{ shape: doc, label: "Sayı negatiftir" }
-    E -- Hayır --> G@{ shape: doc, label: "Sayı sıfırdır" }
+    E -- Evet --> F[/Sayı negatiftir/]
+    E -- Hayır --> G[/Sayı sıfırdır/]
     D --> H([Bitir])
     F --> H
     G --> H
@@ -174,8 +174,8 @@ Kullanıcıdan yaşı alınır ve 18 yaşını doldurup doldurmadığı karar ya
 graph TD
     A([Başla]) --> B[/Yaşı gir/]
     B --> C{Yaş >= 18 mi?}
-    C -- Evet --> D@{ shape: doc, label: "Reşitsiniz" }
-    C -- Hayır --> E@{ shape: doc, label: "Reşit değilsiniz" }
+    C -- Evet --> D[/Reşitsiniz/]
+    C -- Hayır --> E[/Reşit değilsiniz/]
     D --> F([Bitir])
     E --> F
 ```
@@ -188,10 +188,10 @@ Kullanıcıdan üç kenar uzunluğu alınır. Kenarlar pozitifse üçgen eşitsi
 graph TD
     A([Başla]) --> B[/a, b ve c kenar uzunluklarını gir/]
     B --> C{a > 0 ve b > 0 ve c > 0 mı?}
-    C -- Hayır --> D@{ shape: doc, label: "Kenar uzunlukları pozitif olmalı" }
+    C -- Hayır --> D[/Kenar uzunlukları pozitif olmalı/]
     C -- Evet --> E{a+b > c ve a+c > b ve b+c > a mı?}
-    E -- Evet --> F@{ shape: doc, label: "Üçgen oluşur" }
-    E -- Hayır --> G@{ shape: doc, label: "Üçgen oluşmaz" }
+    E -- Evet --> F[/Üçgen oluşur/]
+    E -- Hayır --> G[/Üçgen oluşmaz/]
     D --> H([Bitir])
     F --> H
     G --> H
@@ -205,7 +205,7 @@ graph TD
 graph TD
     A([Başla]) --> B[i = 1]
     B --> C{i <= 5 mi?}
-    C -- Evet --> D@{ shape: doc, label: "i değerini yazdır" }
+    C -- Evet --> D[/i değerini yazdır/]
     D --> E[i = i + 1]
     E --> C
     C -- Hayır --> F([Bitir])
@@ -222,7 +222,7 @@ graph TD
     C -- Evet --> D[toplam = toplam + i]
     D --> E[i = i + 1]
     E --> C
-    C -- Hayır --> F@{ shape: doc, label: "toplamı göster" }
+    C -- Hayır --> F[/toplamı göster/]
     F --> G([Bitir])
 ```
 
