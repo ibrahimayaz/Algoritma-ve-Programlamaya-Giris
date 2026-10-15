@@ -131,7 +131,7 @@ graph TD
     A([Başla]) --> B[/Kısa kenarı gir/]
     B --> C[/Uzun kenarı gir/]
     C --> D[Alan = kısaKenar * uzunKenar]
-    D --> E[Çevre = 2 * (kısaKenar + uzunKenar)]
+    D --> E["Çevre = 2 * (kısaKenar + uzunKenar)"]
     E --> F[/Alan ve çevreyi göster/]
     F --> G([Bitir])
 ```
