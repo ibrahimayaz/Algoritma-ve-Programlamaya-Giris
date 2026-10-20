@@ -123,14 +123,13 @@ Akış diyagramında altıgen (hazırlık sembolü) `for` döngüsünün tamamı
 
 Sayaç 1'den başlar. 5'i aşmadığı sürece ekrana yazdırılır ve bir artırılır.
 
-**Sözde Kod:**
-```text
-BAŞLA
-  i = 1'den 5'e kadar 1'er artırarak TEKRARLA
-    YAZDIR i
-  DÖNGÜ SONU
-BİTİR
-```
+**Algoritma Adımları:**
+1. Başla.
+2. `i = 1` yap (sayaç başlangıcı).
+3. `i <= 5` şartını kontrol et. Şart yanlışsa Adım 6'ya git.
+4. Ekrana `i` değerini yazdır.
+5. `i = i + 1` yap ve Adım 3'e dön.
+6. Bitir.
 
 **Akış Diyagramı:**
 ```mermaid
@@ -145,16 +144,15 @@ graph TD
 
 Her turda sayaç toplam değişkenine eklenir. Döngü bitince toplam ekrana yazdırılır.
 
-**Sözde Kod:**
-```text
-BAŞLA
-  toplam = 0
-  i = 1'den 5'e kadar 1'er artırarak TEKRARLA
-    toplam = toplam + i
-  DÖNGÜ SONU
-  YAZDIR toplam
-BİTİR
-```
+**Algoritma Adımları:**
+1. Başla.
+2. `toplam = 0` yap.
+3. `i = 1` yap (sayaç başlangıcı).
+4. `i <= 5` şartını kontrol et. Şart yanlışsa Adım 7'ye git.
+5. `toplam = toplam + i` yap.
+6. `i = i + 1` yap ve Adım 4'e dön.
+7. Ekrana `toplam` değerini yazdır.
+8. Bitir.
 
 **Akış Diyagramı:**
 ```mermaid
@@ -171,14 +169,13 @@ graph TD
 
 1'den başlayıp sayacı her turda 2 artırarak 9'a kadar olan tek sayılar yazdırılır.
 
-**Sözde Kod:**
-```text
-BAŞLA
-  sayi = 1'den 9'a kadar 2'şer artırarak TEKRARLA
-    YAZDIR sayi
-  DÖNGÜ SONU
-BİTİR
-```
+**Algoritma Adımları:**
+1. Başla.
+2. `sayi = 1` yap.
+3. `sayi <= 9` şartını kontrol et. Şart yanlışsa Adım 6'ya git.
+4. Ekrana `sayi` değerini yazdır.
+5. `sayi = sayi + 2` yap ve Adım 3'e dön.
+6. Bitir.
 
 **Akış Diyagramı:**
 ```mermaid
@@ -193,14 +190,13 @@ graph TD
 
 Sayaç 1'den 5'e kadar ilerler; her turda 3 ile sayacın çarpımı yazdırılır.
 
-**Sözde Kod:**
-```text
-BAŞLA
-  i = 1'den 5'e kadar 1'er artırarak TEKRARLA
-    YAZDIR 3 * i
-  DÖNGÜ SONU
-BİTİR
-```
+**Algoritma Adımları:**
+1. Başla.
+2. `i = 1` yap (sayaç başlangıcı).
+3. `i <= 5` şartını kontrol et. Şart yanlışsa Adım 6'ya git.
+4. Ekrana `3 * i` değerini yazdır.
+5. `i = i + 1` yap ve Adım 3'e dön.
+6. Bitir.
 
 **Akış Diyagramı:**
 ```mermaid
@@ -215,16 +211,15 @@ graph TD
 
 Sayaç 1'den 5'e kadar ilerler ve her turda çarpım sonucuna eklenir. Döngü sonunda `5! = 120` bulunur.
 
-**Sözde Kod:**
-```text
-BAŞLA
-  faktoriyel = 1
-  i = 1'den 5'e kadar 1'er artırarak TEKRARLA
-    faktoriyel = faktoriyel * i
-  DÖNGÜ SONU
-  YAZDIR faktoriyel
-BİTİR
-```
+**Algoritma Adımları:**
+1. Başla.
+2. `faktoriyel = 1` yap.
+3. `i = 1` yap (sayaç başlangıcı).
+4. `i <= 5` şartını kontrol et. Şart yanlışsa Adım 7'ye git.
+5. `faktoriyel = faktoriyel * i` yap.
+6. `i = i + 1` yap ve Adım 4'e dön.
+7. Ekrana `faktoriyel` değerini yazdır.
+8. Bitir.
 
 **Akış Diyagramı:**
 ```mermaid
@@ -247,18 +242,16 @@ graph TD
 
 1'den 10'a kadar sayıları gezin, yalnızca çift olanları toplayın ve toplamı yazdırın. (Sonuç: 30)
 
-**Sözde Kod:**
-```text
-BAŞLA
-  toplam = 0
-  i = 1'den 10'a kadar 1'er artırarak TEKRARLA
-    EĞER i çift ise
-      toplam = toplam + i
-    EĞER SONU
-  DÖNGÜ SONU
-  YAZDIR toplam
-BİTİR
-```
+**Algoritma Adımları:**
+1. Başla.
+2. `toplam = 0` yap.
+3. `i = 1` yap (sayaç başlangıcı).
+4. `i <= 10` şartını kontrol et. Şart yanlışsa Adım 8'e git.
+5. `i` çift mi kontrol et. Çift değilse Adım 7'ye git.
+6. `toplam = toplam + i` yap.
+7. `i = i + 1` yap ve Adım 4'e dön.
+8. Ekrana `toplam` değerini yazdır.
+9. Bitir.
 
 **Akış Diyagramı:**
 ```mermaid
@@ -277,15 +270,14 @@ graph TD
 
 Kullanıcıdan N değerini alın. 1'den N'e kadar her sayının karesini ekrana yazdırın. (N = 4 için: 1, 4, 9, 16)
 
-**Sözde Kod:**
-```text
-BAŞLA
-  OKU N
-  i = 1'den N'e kadar 1'er artırarak TEKRARLA
-    YAZDIR i * i
-  DÖNGÜ SONU
-BİTİR
-```
+**Algoritma Adımları:**
+1. Başla.
+2. Kullanıcıdan `N` sayısını al.
+3. `i = 1` yap (sayaç başlangıcı).
+4. `i <= N` şartını kontrol et. Şart yanlışsa Adım 7'ye git.
+5. Ekrana `i * i` değerini yazdır.
+6. `i = i + 1` yap ve Adım 4'e dön.
+7. Bitir.
 
 **Akış Diyagramı:**
 ```mermaid
@@ -301,18 +293,15 @@ graph TD
 
 Kullanıcının girdiği pozitif tam sayının kaç basamaklı olduğunu bulun. Sayı her turda 10'a tam bölünerek küçültülür. (1254 için: 4)
 
-**Sözde Kod:**
-```text
-BAŞLA
-  OKU n
-  sayac = 0
-  n > 0 İKEN TEKRARLA
-    sayac = sayac + 1
-    n = n / 10 (tam bölme)
-  DÖNGÜ SONU
-  YAZDIR sayac
-BİTİR
-```
+**Algoritma Adımları:**
+1. Başla.
+2. Kullanıcıdan `n` sayısını al.
+3. `sayac = 0` yap.
+4. `n > 0` şartını kontrol et. Şart yanlışsa Adım 7'ye git.
+5. `sayac = sayac + 1` yap.
+6. `n = n / 10` yap (tam bölme) ve Adım 4'e dön.
+7. Ekrana `sayac` değerini yazdır.
+8. Bitir.
 
 **Akış Diyagramı:**
 ```mermaid
@@ -331,24 +320,18 @@ graph TD
 
 Kullanıcı 0 girene kadar sayı almaya devam edin. 0 girildiğinde (0 hariç) girilen sayıların ortalamasını yazdırın. Hiç sayı girilmediyse ortalama hesaplanmaz.
 
-**Sözde Kod:**
-```text
-BAŞLA
-  toplam = 0
-  adet = 0
-  OKU sayi
-  sayi != 0 İKEN TEKRARLA
-    toplam = toplam + sayi
-    adet = adet + 1
-    OKU sayi
-  DÖNGÜ SONU
-  EĞER adet > 0 ise
-    YAZDIR toplam / adet
-  DEĞİLSE
-    YAZDIR "Sayı girilmedi"
-  EĞER SONU
-BİTİR
-```
+**Algoritma Adımları:**
+1. Başla.
+2. `toplam = 0` ve `adet = 0` yap.
+3. Kullanıcıdan `sayi` değerini al.
+4. `sayi != 0` şartını kontrol et. Şart yanlışsa Adım 8'e git.
+5. `toplam = toplam + sayi` yap.
+6. `adet = adet + 1` yap.
+7. Kullanıcıdan yeni `sayi` değerini al ve Adım 4'e dön.
+8. `adet > 0` mı kontrol et. Değilse Adım 10'a git.
+9. Ekrana `toplam / adet` değerini yazdır ve Adım 11'e git.
+10. Ekrana "Sayı girilmedi" yazdır.
+11. Bitir.
 
 **Akış Diyagramı:**
 ```mermaid
@@ -371,19 +354,16 @@ graph TD
 
 Fibonacci dizisinde her sayı, kendinden önceki iki sayının toplamıdır. İlk 8 terimi yazdırın. (0, 1, 1, 2, 3, 5, 8, 13)
 
-**Sözde Kod:**
-```text
-BAŞLA
-  a = 0
-  b = 1
-  i = 1'den 8'e kadar 1'er artırarak TEKRARLA
-    YAZDIR a
-    c = a + b
-    a = b
-    b = c
-  DÖNGÜ SONU
-BİTİR
-```
+**Algoritma Adımları:**
+1. Başla.
+2. `a = 0` ve `b = 1` yap.
+3. `i = 1` yap (sayaç başlangıcı).
+4. `i <= 8` şartını kontrol et. Şart yanlışsa Adım 9'a git.
+5. Ekrana `a` değerini yazdır.
+6. `c = a + b` yap.
+7. `a = b` ve `b = c` yap.
+8. `i = i + 1` yap ve Adım 4'e dön.
+9. Bitir.
 
 **Akış Diyagramı:**
 ```mermaid
