@@ -31,7 +31,7 @@ Bilgisayar bir işlem yaparken verilere ihtiyaç duyar ve bu verileri geçici be
 
 ### 3.1. Değişken (Variable) Nedir?
 Çalışma zamanında (program akarken) içerisindeki değeri değişebilen, farklı veriler atanabilen RAM kutucuklarıdır. 
-- *Örnek:* Bir oyundaki `oyuncuCan` değeri (100 ile başlar, kurşun yedikçe 80'e, 50'ye düşer). Veya matematiksel bir işlemde dışarıdan okuduğunuz `Sayi1` değişkeni.
+- *Örnek:* Bir oyundaki `puan` değeri (100 ile başlar, kurşun yedikçe 80'e, 50'ye düşer). Veya matematiksel bir işlemde dışarıdan okuduğunuz `Sayi1` değişkeni.
 
 **Değişken İsimlendirme Kuralları:**
 Programlamaya başlarken verilerimize isimler koyacağız (X, Sayi, Yas, Not).

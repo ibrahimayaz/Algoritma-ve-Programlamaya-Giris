@@ -56,8 +56,33 @@ Fakat C dili çok katı bir dildir. Sisteme "Selam ben `Sayi` diye değişken ta
 
 İşte bu sürece C dilinde **Değişken Belirleme ve Veri Tipleri (Data Types)** deniyor.
 
+**C Dilinde Değişken Tanımlama Kuralları:**
+1. **Önce tanımla, sonra kullan:** Bir değişken kullanılmadan önce veri tipiyle birlikte tanımlanmalıdır. (`int yas;` yazmadan `yas = 20;` yazılamaz.)
+2. **Veri tipi zorunludur:** Her değişkenin tipi (`int`, `float`, `char`...) başta belirtilir ve sonradan değiştirilemez.
+3. **Değişken adı harfle veya alt çizgiyle başlamalıdır:** `sayi1`, `_toplam` geçerlidir; `1sayi` geçersizdir. Değişken adı sayı ile başlamamalıdır.
+4. **Değişken adı yalnızca harf, rakam ve alt çizgi (`_`) kullanılabilir:** Boşluk, tire (`-`) ve özel karakterler (`@`, `#`, `$`, `%` vb.) kullanılamaz. (`not ortalamasi` ve `ders-notu` geçersizdir; `not_ortalamasi` geçerlidir.)
+5. **Türkçe karakter kullanılmamalıdır:** `ç, ğ, ı, ö, ş, ü` yerine `c, g, i, o, s, u` kullanın. (`ogrenciYasi` yazın, `öğrenciYaşı` yazmayın.)
+6. **Büyük/küçük harfe duyarlıdır (Case Sensitive):** `yas`, `Yas` ve `YAS` üç ayrı değişkendir.
+7. **Anahtar kelimeler değişken adı olarak kullanılamaz:** `int`, `float`, `char`, `return`, `if`, `while`, `for` gibi C'nin ayrılmış kelimeleri değişken adı olamaz.
+8. **Aynı isim aynı kapsamda iki kez tanımlanamaz:** Bir `main` içinde iki kez `int sayi;` yazılırsa hata verir.
+9. **Her değişken tanımlama noktalı virgülle biter (`;`).**
+10. **Başlangıç değeri vermek iyi alışkanlıktır:** Değer verilmeyen değişkenin içinde rastgele (çöp) bir değer bulunabilir. (`int toplam = 0;`)
+11. **Anlamlı isim seçin:** `a`, `x` yerine `yas`, `toplam`, `ortalama` gibi ne tuttuğu anlaşılan isimler kullanın.
+
+**Doğru / Yanlış Örnekler:**
+```c
+int yas;              // Doğru
+float not_ortalamasi; // Doğru
+char _harf = 'A';     // Doğru
+int toplam = 0;       // Doğru (başlangıç değeriyle)
+
+int 2sayi;            // YANLIŞ: Rakamla başlıyor
+float not ortalamasi; // YANLIŞ: Boşluk var
+int ders-notu;        // YANLIŞ: Tire var
+int return;           // YANLIŞ: Anahtar kelime
+```
+
 ### 4.1. Temel Veri Tipleri
-Önlisans aşamasında 3-4 kilit yapıyı en çok kullanacağız:
 
 1. **`int` (Integer - Tamsayılar):** Kesir / Bölünmeyen kaba sayılardır. (-5, 10, 0, 1000). Ram’de (genellikle) 4 Byte yer kaplarlar -2 Milyar ila +2 Milyar arasındaki sayılara kucak açabilir.
    Tanımlama örneği: `int Sayi = 5;`,  `int Yas = 21;`
@@ -65,13 +90,29 @@ Fakat C dili çok katı bir dildir. Sisteme "Selam ben `Sayi` diye değişken ta
 2. **`float` (Ondalık/Kesirli Sayılar):** Küçük virgüllü ve noktalı rakamlarda kullanılan sayılardır.
    Tanımlama örneği: `float Maliyet = 15.5;`  (Not: Türkiye'deki gibi virgül (,) KULLANILMAZ sistemde nokta (.) basılır).
    
-3. **`double` (Kapasiteli Ondalık Sayılar):** Float’ın ağabeyidir. Bilimsel bir hesaplama vs yapıyorsanız küsürat hatası vermemesi için daha ağır bu tıpı çağırırsınız (15 haneli).
+3. **`double` (Kapasiteli Ondalık Sayılar):** Float’ın büyük kardeşidir. Bilimsel hesaplar gibi küsürat hatasının istenmediği durumlarda, daha fazla bellek kullanan ama daha hassas olan bu tipi seçersiniz (yaklaşık 15 haneye kadar hassasiyet, 8 Byte).
    Tanımlama örneği: `double pDizisi = 3.14159265;`
 
 4. **`char` (Character - Sadece Tek Bir Karakter):** Klavyedeki harf ('A', 'B') sembol veya sayı değerlerini ancak "Teker teker" saklamak için yaratılmış tek byte alan tiplerdir. En belirgin özelliği karakterler içeri atanırken değer Tırnak (`'...'`) içinde verilmelidir. 
    Tanımlama Örneği: `char KanGrubu = 'A';`
 
-*(Ayrıca metin yazabilmek için de birden fazla karakter dizisini bir araya getiren string dizileri vardır ki haftalarca sonra "Diziler-Arrays" konusunda yoğunlaşacağız)*.
+5. **`string` (Metin / Karakter Dizisi):** Birden fazla karakterin yan yana gelmesiyle oluşan kelime ve cümlelerdir. **C dilinde `string` adında hazır bir veri tipi yoktur;** metin, `char` dizisi (`char[]`) ile tutulur ve değer çift tırnak (`"..."`) içinde verilir. (Python, C#, Java gibi dillerde `string` doğrudan kullanılır.) Diziler konusunu ileri haftalarda ayrıntılı işleyeceğiz, şimdilik kalıp olarak bilmeniz yeterlidir.
+   Tanımlama örneği: `char Ad[] = "Ayşe";`, `char Sehir[20] = "Ankara";`
+   *(Tek tırnak `'A'` tek karakter (char), çift tırnak `"A"` metindir (string). İkisi birbirinin yerine kullanılamaz.)*
+
+6. **`bool` (Mantıksal - Doğru / Yanlış):** Yalnızca iki değer alabilen tiptir: `true` (doğru) ve `false` (yanlış). Karar yapılarındaki "Evet/Hayır" cevaplarının karşılığıdır. C dilinde `bool` kullanmak için `#include <stdbool.h>` kütüphanesini eklemek gerekir. Aslında arka planda `true` = 1, `false` = 0 olarak saklanır.
+   Tanımlama örneği: `bool GirisYapti = true;`, `bool Gectimi = false;`
+
+```c
+#include <stdio.h>
+#include <stdbool.h> // bool tipi için gerekli
+
+int main() {
+    char Ad[] = "Ayşe";
+    bool Gectimi = true;
+    return 0;
+}
+```
 
 ### 4.2. Değişken Tanımlama Süreç Formülü
 C dilinde bir değişkeni oluştururken soldan sağa bir formül vardır:
@@ -101,10 +142,12 @@ int main() {
 ## 5. Değişkenleri Ekrana Bastırmak Üzerine Küçük Bir Başlangıç (`%` Parametreleri)
 Biz `printf("Merhaba\n")` diyerek tırnak içini normal basarız. Peki demin oluşturduğumuz yaşı (ogrenciYasi= 23) ekranda "Kişinin yaşı: 23" yazmak istersek ne yapacağız? `printf("Yas: ogrenciYasi")` dersek ekranda literal o metni yazar 23 basmaz. 
 
-İşte değişkenin içeriğini C'de ekranda oynatmak istiyorsanız "Biçim Niteleyicileri (Format Specifiers)" gerekir (Bunlara format damgası denir): 
+İşte değişkenin içeriğini C'de ekranda göstermek istiyorsanız "Biçim Niteleyicileri (Format Specifiers)" gerekir (Bunlara format damgası denir): 
 - `%d` veya `%i` : Tamsayıları (int) temsil eder.
 - `%f` : Ondalık yapıları (float) simgeler.
 - `%c` : Harfleri / karakterleri (char) çeker.
+- `%s` : Metinleri (karakter dizisi / string) yazdırır. Örnek: `printf("Ad: %s", Ad);`
+- `bool` için ayrı bir niteleyici yoktur; `true`/`false` 1/0 olarak saklandığı için `%d` kullanılır. Örnek: `printf("%d", Gectimi);` (ekrana 1 yazar)
 
 ```c
 #include <stdio.h>

@@ -22,7 +22,7 @@ Döngünün sonsuza girmemesi için daima araya bir "Sayaç" koymalı ve her tur
 
 ## 3. Akış Diyagramı Tasarım Örnekleri (Döngü / İleri Kararlar)
 
-Aşağıda Döngü algoritması, Adım/Sayaç uygulaması üzerine 3 farklı "Mermaid" diyagramlı örnek ele alınmıştır.
+İlk olarak döngü ve sayaç mantığını gösteren 3 örnek, ardından `for` döngüsünün akış diyagramındaki altıgenlerle gösterildiği 5 basit örnek ele alınmıştır.
 
 ### ÖRNEK 1: Ekrana 5 Kere "Merhaba Dünya" Yazdıran Döngü Algoritması
 Yazılım serüvenlerinde "10 kere tekrar et" komutunu diyagramla ifade edeceğiz. Klasik mantıkla art arda 5 tane çıktı diktörtgeni çizebilecek olmamıza rağmen, ya 100.000 kere istenirse diye döngü sistemini kullanacağız.
@@ -112,6 +112,291 @@ graph TD
     F --> G([Bitir])
 ```
 *Açıklama:* Bu döngümüzde net bir 'Sayac = Sayac+1' durumu yok, şart kullanıcıya bağlandı. Kullanıcı klavyeden -5 yazmadığı müddetçe, sistem sonsuza kadar onu (C) aşamasıyla (E) aşaması arasında defalarca çalışabilecek bir kafesin içerisine attı. Yazılımların interaktif olarak insana hizmet etmesini saplayan kilit prensip buradaki diyagramdır.
+
+---
+
+### For Döngüsünü Altıgenlerle Gösterme
+
+Akış diyagramında altıgen (hazırlık sembolü) `for` döngüsünün tamamını tek kutuda gösterir: `başlangıç; şart; artış`. Ayrıca karar eşkenar dörtgeni veya sayaç artırma kutusu çizilmez. Şart doğruysa döngü gövdesi çalışır ve ok altıgene geri döner (sayaç otomatik artar); şart yanlışsa döngüden çıkılır.
+
+### ÖRNEK 4: 1'den 5'e Kadar Sayıları Yazdırma
+
+Sayaç 1'den başlar. 5'i aşmadığı sürece ekrana yazdırılır ve bir artırılır.
+
+**Sözde Kod:**
+```text
+BAŞLA
+  i = 1'den 5'e kadar 1'er artırarak TEKRARLA
+    YAZDIR i
+  DÖNGÜ SONU
+BİTİR
+```
+
+**Akış Diyagramı:**
+```mermaid
+graph TD
+    A([Başla]) --> B{{"i = 1; i <= 5; i++"}}
+    B -- Şart doğru --> C@{ shape: doc, label: "i değerini yazdır" }
+    C --> B
+    B -- Şart yanlış --> D([Bitir])
+```
+
+### ÖRNEK 5: 1'den 5'e Kadar Sayıların Toplamını Bulma
+
+Her turda sayaç toplam değişkenine eklenir. Döngü bitince toplam ekrana yazdırılır.
+
+**Sözde Kod:**
+```text
+BAŞLA
+  toplam = 0
+  i = 1'den 5'e kadar 1'er artırarak TEKRARLA
+    toplam = toplam + i
+  DÖNGÜ SONU
+  YAZDIR toplam
+BİTİR
+```
+
+**Akış Diyagramı:**
+```mermaid
+graph TD
+    A([Başla]) --> B[toplam = 0]
+    B --> C{{"i = 1; i <= 5; i++"}}
+    C -- Şart doğru --> D[toplam = toplam + i]
+    D --> C
+    C -- Şart yanlış --> E@{ shape: doc, label: "toplam değerini yazdır" }
+    E --> F([Bitir])
+```
+
+### ÖRNEK 6: Tek Sayıları Yazdırma
+
+1'den başlayıp sayacı her turda 2 artırarak 9'a kadar olan tek sayılar yazdırılır.
+
+**Sözde Kod:**
+```text
+BAŞLA
+  sayi = 1'den 9'a kadar 2'şer artırarak TEKRARLA
+    YAZDIR sayi
+  DÖNGÜ SONU
+BİTİR
+```
+
+**Akış Diyagramı:**
+```mermaid
+graph TD
+    A([Başla]) --> B{{"sayi = 1; sayi <= 9; sayi += 2"}}
+    B -- Şart doğru --> C@{ shape: doc, label: "sayi değerini yazdır" }
+    C --> B
+    B -- Şart yanlış --> D([Bitir])
+```
+
+### ÖRNEK 7: 3'ün Çarpım Tablosunu Yazdırma
+
+Sayaç 1'den 5'e kadar ilerler; her turda 3 ile sayacın çarpımı yazdırılır.
+
+**Sözde Kod:**
+```text
+BAŞLA
+  i = 1'den 5'e kadar 1'er artırarak TEKRARLA
+    YAZDIR 3 * i
+  DÖNGÜ SONU
+BİTİR
+```
+
+**Akış Diyagramı:**
+```mermaid
+graph TD
+    A([Başla]) --> B{{"i = 1; i <= 5; i++"}}
+    B -- Şart doğru --> C@{ shape: doc, label: "3 x i değerini yazdır" }
+    C --> B
+    B -- Şart yanlış --> D([Bitir])
+```
+
+### ÖRNEK 8: 5 Sayısının Faktöriyelini Hesaplama
+
+Sayaç 1'den 5'e kadar ilerler ve her turda çarpım sonucuna eklenir. Döngü sonunda `5! = 120` bulunur.
+
+**Sözde Kod:**
+```text
+BAŞLA
+  faktoriyel = 1
+  i = 1'den 5'e kadar 1'er artırarak TEKRARLA
+    faktoriyel = faktoriyel * i
+  DÖNGÜ SONU
+  YAZDIR faktoriyel
+BİTİR
+```
+
+**Akış Diyagramı:**
+```mermaid
+graph TD
+    A([Başla]) --> B[faktoriyel = 1]
+    B --> C{{"i = 1; i <= 5; i++"}}
+    C -- Şart doğru --> D[faktoriyel = faktoriyel * i]
+    D --> C
+    C -- Şart yanlış --> E@{ shape: doc, label: "faktoriyel değerini yazdır" }
+    E --> F([Bitir])
+```
+
+---
+
+### Orta Seviye Döngü Soruları (For / While)
+
+Çizim kuralları: Döngü şartı (`for` için başlangıç; şart; artış) altıgenin içinde yazılır, ayrıca eşkenar dörtgen çizilmez. Eşkenar dörtgen yalnızca döngü içindeki gerçek `if` kararlarında kullanılır. Ekrana yazdırma `doc` şekliyle, klavyeden okuma paralelkenarla gösterilir.
+
+### SORU 1: 1'den 10'a Kadar Çift Sayıların Toplamı (For + Karar)
+
+1'den 10'a kadar sayıları gezin, yalnızca çift olanları toplayın ve toplamı yazdırın. (Sonuç: 30)
+
+**Sözde Kod:**
+```text
+BAŞLA
+  toplam = 0
+  i = 1'den 10'a kadar 1'er artırarak TEKRARLA
+    EĞER i çift ise
+      toplam = toplam + i
+    EĞER SONU
+  DÖNGÜ SONU
+  YAZDIR toplam
+BİTİR
+```
+
+**Akış Diyagramı:**
+```mermaid
+graph TD
+    A([Başla]) --> B[toplam = 0]
+    B --> C{{"i = 1; i <= 10; i++"}}
+    C -- Şart doğru --> D{i çift mi?}
+    D -- Evet --> E[toplam = toplam + i]
+    E --> C
+    D -- Hayır --> C
+    C -- Şart yanlış --> F@{ shape: doc, label: "toplam değerini yazdır" }
+    F --> G([Bitir])
+```
+
+### SORU 2: N'e Kadar Sayıların Karelerini Yazdırma (For)
+
+Kullanıcıdan N değerini alın. 1'den N'e kadar her sayının karesini ekrana yazdırın. (N = 4 için: 1, 4, 9, 16)
+
+**Sözde Kod:**
+```text
+BAŞLA
+  OKU N
+  i = 1'den N'e kadar 1'er artırarak TEKRARLA
+    YAZDIR i * i
+  DÖNGÜ SONU
+BİTİR
+```
+
+**Akış Diyagramı:**
+```mermaid
+graph TD
+    A([Başla]) --> B[/N sayısını gir/]
+    B --> C{{"i = 1; i <= N; i++"}}
+    C -- Şart doğru --> D@{ shape: doc, label: "i * i değerini yazdır" }
+    D --> C
+    C -- Şart yanlış --> E([Bitir])
+```
+
+### SORU 3: Bir Sayının Basamak Sayısını Bulma (While)
+
+Kullanıcının girdiği pozitif tam sayının kaç basamaklı olduğunu bulun. Sayı her turda 10'a tam bölünerek küçültülür. (1254 için: 4)
+
+**Sözde Kod:**
+```text
+BAŞLA
+  OKU n
+  sayac = 0
+  n > 0 İKEN TEKRARLA
+    sayac = sayac + 1
+    n = n / 10 (tam bölme)
+  DÖNGÜ SONU
+  YAZDIR sayac
+BİTİR
+```
+
+**Akış Diyagramı:**
+```mermaid
+graph TD
+    A([Başla]) --> B[/Pozitif sayıyı gir: n/]
+    B --> C[sayac = 0]
+    C --> D{{"n > 0"}}
+    D -- Şart doğru --> E[sayac = sayac + 1]
+    E --> F["n = n / 10 (tam bölme)"]
+    F --> D
+    D -- Şart yanlış --> G@{ shape: doc, label: "sayac değerini yazdır" }
+    G --> H([Bitir])
+```
+
+### SORU 4: 0 Girilene Kadar Sayıların Ortalamasını Bulma (While + Karar)
+
+Kullanıcı 0 girene kadar sayı almaya devam edin. 0 girildiğinde (0 hariç) girilen sayıların ortalamasını yazdırın. Hiç sayı girilmediyse ortalama hesaplanmaz.
+
+**Sözde Kod:**
+```text
+BAŞLA
+  toplam = 0
+  adet = 0
+  OKU sayi
+  sayi != 0 İKEN TEKRARLA
+    toplam = toplam + sayi
+    adet = adet + 1
+    OKU sayi
+  DÖNGÜ SONU
+  EĞER adet > 0 ise
+    YAZDIR toplam / adet
+  DEĞİLSE
+    YAZDIR "Sayı girilmedi"
+  EĞER SONU
+BİTİR
+```
+
+**Akış Diyagramı:**
+```mermaid
+graph TD
+    A([Başla]) --> B[toplam = 0, adet = 0]
+    B --> C[/Sayıyı gir: sayi/]
+    C --> D{{"sayi != 0"}}
+    D -- Şart doğru --> E[toplam = toplam + sayi]
+    E --> F[adet = adet + 1]
+    F --> G[/Sayıyı gir: sayi/]
+    G --> D
+    D -- Şart yanlış --> H{adet > 0 mı?}
+    H -- Evet --> I@{ shape: doc, label: "toplam / adet değerini yazdır" }
+    H -- Hayır --> J@{ shape: doc, label: "Sayı girilmedi" }
+    I --> K([Bitir])
+    J --> K
+```
+
+### SORU 5: İlk 8 Fibonacci Sayısını Yazdırma (For)
+
+Fibonacci dizisinde her sayı, kendinden önceki iki sayının toplamıdır. İlk 8 terimi yazdırın. (0, 1, 1, 2, 3, 5, 8, 13)
+
+**Sözde Kod:**
+```text
+BAŞLA
+  a = 0
+  b = 1
+  i = 1'den 8'e kadar 1'er artırarak TEKRARLA
+    YAZDIR a
+    c = a + b
+    a = b
+    b = c
+  DÖNGÜ SONU
+BİTİR
+```
+
+**Akış Diyagramı:**
+```mermaid
+graph TD
+    A([Başla]) --> B[a = 0, b = 1]
+    B --> C{{"i = 1; i <= 8; i++"}}
+    C -- Şart doğru --> D@{ shape: doc, label: "a değerini yazdır" }
+    D --> E[c = a + b]
+    E --> F[a = b]
+    F --> G[b = c]
+    G --> C
+    C -- Şart yanlış --> H([Bitir])
+```
 
 ---
 

@@ -24,7 +24,7 @@ Diyagramlarımız kafamıza göre çizdiğimiz şekiller değildir; uluslararas�
 3. **Dikdörtgen:** İşlem, atama veya hesaplama kutusudur. Tüm matematiksel işlemler (toplama, çıkarma) burada yapılır. 
 4. **Eşkenar Dörtgen (Karar / Şart):** Mantıksal karşılaştırmalar içerir. (Eğer sayı sıfırdan büyükse sağa git, küçükse aşağı git gibi). İçinden "Evet" ve "Hayır" olmak üzere iki ok çıkar.
 5. **Dalgalı Dikdörtgen (Yazdırma):** Ekrana çıktı olarak gösterilecek ifadeyi temsil eder.
-6. **Altıgen (Döngü):** Döngü ifade eder.
+6. **Altıgen (Döngü):** Döngüyü ifade eder.
 7. **Yön Okları:** Sürecin / programın hangi yöne doğru akması gerektiğini temsil eder.
 ![Akış Diyagramı](images/image5.png)
 ---
