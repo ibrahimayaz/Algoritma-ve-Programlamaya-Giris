@@ -248,7 +248,7 @@ graph TD
 3. `i = 0` yap (sayaç başlangıcı).
 4. `i <= 10` şartını kontrol et. Şart yanlışsa Adım 7'ye git.
 5. `toplam = toplam + i` yap.
-6. `i = i + 2` yap ve Adım 4'e dön.
+6. Her döngü turundan sonra `i` değerini 2 artır ve Adım 4'e dön.
 7. Ekrana `toplam` değerini yazdır.
 8. Bitir.
 
@@ -256,12 +256,11 @@ graph TD
 ```mermaid
 graph TD
     A([Başla]) --> B[toplam = 0]
-    B --> C{{"i = 0; i <= 10; i += 2"}}
+    B --> C{{"i = 0; i <= 10; i+=2"}}
     C -- Şart doğru --> D[toplam = toplam + i]
-    D --> E[i = i + 2]
-    E --> C
-    C -- Şart yanlış --> F@{ shape: doc, label: "toplam değerini yazdır" }
-    F --> G([Bitir])
+    D --> C
+    C -- Şart yanlış --> E@{ shape: doc, label: "toplam değerini yazdır" }
+    E --> F([Bitir])
 ```
 
 ### SORU 2: N'e Kadar Sayıların Karelerini Yazdırma (For)
