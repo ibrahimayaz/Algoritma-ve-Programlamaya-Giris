@@ -202,7 +202,7 @@ Sayaç 1'den 5'e kadar ilerler; her turda 3 ile sayacın çarpımı yazdırılı
 ```mermaid
 graph TD
     A([Başla]) --> B{{"i = 1; i <= 5; i++"}}
-    B -- Şart doğru --> C@{ shape: doc, label: "3 x i değerini yazdır" }
+    B -- Şart doğru --> C@{ shape: doc, label: "3 * i değerini yazdır" }
     C --> B
     B -- Şart yanlış --> D([Bitir])
 ```
