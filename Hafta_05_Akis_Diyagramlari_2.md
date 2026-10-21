@@ -245,23 +245,21 @@ graph TD
 **Algoritma Adımları:**
 1. Başla.
 2. `toplam = 0` yap.
-3. `i = 1` yap (sayaç başlangıcı).
-4. `i <= 10` şartını kontrol et. Şart yanlışsa Adım 8'e git.
-5. `i` çift mi kontrol et. Çift değilse Adım 7'ye git.
-6. `toplam = toplam + i` yap.
-7. `i = i + 1` yap ve Adım 4'e dön.
-8. Ekrana `toplam` değerini yazdır.
-9. Bitir.
+3. `i = 0` yap (sayaç başlangıcı).
+4. `i <= 10` şartını kontrol et. Şart yanlışsa Adım 7'ye git.
+5. `toplam = toplam + i` yap.
+6. `i = i + 2` yap ve Adım 4'e dön.
+7. Ekrana `toplam` değerini yazdır.
+8. Bitir.
 
 **Akış Diyagramı:**
 ```mermaid
 graph TD
     A([Başla]) --> B[toplam = 0]
-    B --> C{{"i = 1; i <= 10; i++"}}
-    C -- Şart doğru --> D{i çift mi?}
-    D -- Evet --> E[toplam = toplam + i]
+    B --> C{{"i = 0; i <= 10; i += 2"}}
+    C -- Şart doğru --> D[toplam = toplam + i]
+    D --> E[i = i + 2]
     E --> C
-    D -- Hayır --> C
     C -- Şart yanlış --> F@{ shape: doc, label: "toplam değerini yazdır" }
     F --> G([Bitir])
 ```
