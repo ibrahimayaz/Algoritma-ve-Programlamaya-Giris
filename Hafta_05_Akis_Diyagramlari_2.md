@@ -286,31 +286,27 @@ graph TD
     C -- Şart yanlış --> E([Bitir])
 ```
 
-### SORU 3: Bir Sayının Basamak Sayısını Bulma (While)
+### SORU 3: Bir Sayının Basamak Sayısını Bulma (For)
 
 Kullanıcının girdiği pozitif tam sayının kaç basamaklı olduğunu bulun. Sayı her turda 10'a tam bölünerek küçültülür. (1254 için: 4)
 
 **Algoritma Adımları:**
 1. Başla.
 2. Kullanıcıdan `n` sayısını al.
-3. `sayac = 0` yap.
-4. `n > 0` şartını kontrol et. Şart yanlışsa Adım 7'ye git.
-5. `sayac = sayac + 1` yap.
-6. `n = n / 10` yap (tam bölme) ve Adım 4'e dön.
-7. Ekrana `sayac` değerini yazdır.
-8. Bitir.
+3. `sayac = 0` başlangıcıyla `n > 0` olduğu sürece döngüyü çalıştır (her turdan sonra `sayac` 1 artar).
+4. Döngü gövdesinde `n = n / 10` yap (tam bölme) ve Adım 3'e dön.
+5. Ekrana `sayac` değerini yazdır.
+6. Bitir.
 
 **Akış Diyagramı:**
 ```mermaid
 graph TD
     A([Başla]) --> B[/Pozitif sayıyı gir: n/]
-    B --> C[sayac = 0]
-    C --> D{{"n > 0"}}
-    D -- Şart doğru --> E[sayac = sayac + 1]
-    E --> F["n = n / 10 (tam bölme)"]
-    F --> D
-    D -- Şart yanlış --> G@{ shape: doc, label: "sayac değerini yazdır" }
-    G --> H([Bitir])
+    B --> C{{"sayac = 0; n > 0; sayac++"}}
+    C -- Şart doğru --> D["n = n / 10 (tam bölme)"]
+    D --> C
+    C -- Şart yanlış --> E@{ shape: doc, label: "sayac değerini yazdır" }
+    E --> F([Bitir])
 ```
 
 ### SORU 4: 0 Girilene Kadar Sayıların Ortalamasını Bulma (While + Karar)
