@@ -146,7 +146,7 @@ graph TD
     A([Başla]) --> B[/r gir/]
     B --> C[Alan = 3.14 * r * r]
     C --> D[Çevre = 2 * 3.14 * r]
-    D --> E@{ shape: doc, label: "Alan ve çevreyi göster" }
+    D --> E@{ shape: doc, label: "Alan, Çevre" }
     E --> F([Bitir])
 ```
 
