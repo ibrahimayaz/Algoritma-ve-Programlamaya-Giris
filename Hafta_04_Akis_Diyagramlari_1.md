@@ -156,12 +156,12 @@ Bu örnekte kullanıcıdan bir sayı alınır. Önce sayının sıfırdan büyü
 **Akış Diyagramı Şeması:**
 ```mermaid
 graph TD
-    A([Başla]) --> B[/Bir sayı gir/]
-    B --> C{Sayı > 0 mı?}
-    C -- Evet --> D@{ shape: doc, label: "Sayı pozitiftir" }
-    C -- Hayır --> E{Sayı < 0 mı?}
-    E -- Evet --> F@{ shape: doc, label: "Sayı negatiftir" }
-    E -- Hayır --> G@{ shape: doc, label: "Sayı sıfırdır" }
+    A([Başla]) --> B[/x/]
+    B --> C{x > 0 mı?}
+    C -- Evet --> D@{ shape: doc, label: "x pozitiftir" }
+    C -- Hayır --> E{x < 0 mı?}
+    E -- Evet --> F@{ shape: doc, label: "x negatiftir" }
+    E -- Hayır --> G@{ shape: doc, label: "x sıfırdır" }
     D --> H([Bitir])
     F --> H
     G --> H
