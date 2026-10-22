@@ -138,14 +138,14 @@ graph TD
 ```
 
 ### ÖRNEK 6: Dairenin Alanını ve Çevresini Hesaplayan Program
-Bu örnekte kullanıcıdan dairenin yarıçapı alınır. Alan `π × yarıçap × yarıçap`, çevre ise `2 × π × yarıçap` formülleriyle hesaplanır. Hesaplamalarda `π` yaklaşık `3,14` olarak kullanılır.
+Bu örnekte kullanıcıdan dairenin yarıçapı alınır. Alan `π × r × r`, çevre ise `2 × π × r` formülleriyle hesaplanır. Hesaplamalarda `π` yaklaşık `3,14` olarak kullanılır.
 
 **Akış Diyagramı Şeması:**
 ```mermaid
 graph TD
-    A([Başla]) --> B[/Yarıçapı gir/]
-    B --> C[Alan = 3.14 * yarıçap * yarıçap]
-    C --> D[Çevre = 2 * 3.14 * yarıçap]
+    A([Başla]) --> B[/r gir/]
+    B --> C[Alan = 3.14 * r * r]
+    C --> D[Çevre = 2 * 3.14 * r]
     D --> E@{ shape: doc, label: "Alan ve çevreyi göster" }
     E --> F([Bitir])
 ```
