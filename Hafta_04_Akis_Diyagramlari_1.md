@@ -129,8 +129,8 @@ Bu akış diyagramında kullanıcıdan dikdörtgenin kısa ve uzun kenar uzunluk
 **Akış Diyagramı Şeması:**
 ```mermaid
 graph TD
-    A([Başla]) --> B[/Kısa kenarı gir/]
-    B --> C[/Uzun kenarı gir/]
+    A([Başla]) --> B[/kısaKenar gir/]
+    B --> C[/uzunKenar gir/]
     C --> D[Alan = kısaKenar * uzunKenar]
     D --> E["Çevre = 2 * (kısaKenar + uzunKenar)"]
     E --> F@{ shape: doc, label: "Alan ve çevreyi göster" }
