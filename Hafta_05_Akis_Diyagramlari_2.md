@@ -231,6 +231,9 @@ graph TD
     C -- Şart yanlış --> E@{ shape: doc, label: "faktoriyel değerini yazdır" }
     E --> F([Bitir])
 ```
+**II.Yol**  
+![Faktöriyel akış diyagramı](images/faktoriyel.svg)
+
 
 ---
 
